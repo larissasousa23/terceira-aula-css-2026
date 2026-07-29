@@ -119,15 +119,28 @@ transition: transform 0.5s ease;
     font-weight: bold;
     transition: background 0.3 ease;
 }
+
 .btn:hover{
     background: #fff;
 }
 /*===Responsivo===*/
 @media(max-width:600px){
     .card{
-    width: ;
+    width:90 ;
     height: 320px;
 }
 
-
 }
+.btn:hover{
+    background: #ff2e2e;
+}
+
+/*===RESPONSIVO===*/
+@media(max-widht:600px){
+    
+.card{
+    width: 90%;
+    height: 320px;
+}
+}
+
