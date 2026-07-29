@@ -6,6 +6,11 @@
 body{
     min-height: 100vh;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+}
+body {
+    min-height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
     position: relative;
     overflow-x: hidden;
     display: flex;
@@ -14,6 +19,7 @@ body{
     padding: 40px 20px;
 
 }
+
 /*====VIDEO DE FUNDO====*/
 .bg-video{
     position: fixed;
@@ -44,14 +50,60 @@ header{
 header h1{
     font-size: 2.5rem;
     margin-bottom: 10px;
-    text-shadow: 0 2px 8px black;
+    text-shadow: 0 2px 8px black;}
+
+/*==== Vídeo de Fundo ===*/
+
+/*=== o video fica fixo, atras de tudo,
+cobrinndo a tela inteira===*/
+
+.bg-video{
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+object-fit: cover;
+z-index: -2;
+}
+/*Camada escura por cima do video,
+para o texto ficar legivel*/
+
+.bg-overlay{
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background: rgba(0,0,0,0.55);
+z-index: -1;
+}
+
+/*=== CABEÇALHO ===*/
+header{
+    text-align: center;
+    color: brown;
+    margin-bottom: 40px;
+
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.6);
+
 }
 header p{
     font-size: 1.1rem;
     opacity: 0.9;
 }
+
 /*====CARDS====*/
 .container-cards{
+
+
+.contrainer-cards{
+
     display: flex;
     gap: 30px;
     flex-wrap: wrap;
@@ -63,6 +115,7 @@ header p{
     height: 380px;
     border-radius: 16px;
     overflow: hidden;
+
     box-shadow: rgb(0, 0, 0);
     cursor: pointer;
 }
@@ -78,6 +131,26 @@ transition: transform 0.5s ease;
     transform: scale(1.15);
 }
 /*o conteudo do card fica escondido embaixo, fora da vista*/
+
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    cursor: pointer;
+
+}
+.card-img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /*essa transição faz a imagem crescer suavemente*/
+    transition: transform 0.5 ease;
+}
+
+/* ao passar o mouse, a imagem dá um leve zoom*/
+.card:hover img{
+    transform: scale(1.15);
+
+}
+/* o conteudo do card fica escondido embaixo,fora da vista */
+
 .card-conteudo{
     position: absolute;
     left: 0;
@@ -85,6 +158,7 @@ transition: transform 0.5s ease;
     width: 100%;
     padding: 20px;
     color: aliceblue;
+
     background: linear-gradient(to top rgba(0,0,0,0.9), transparent
     );
     /*começa deslocando para baixo e invisivel*/
@@ -97,26 +171,58 @@ transition: transform 0.5s ease;
 .card:hover .card-conteudo{
     transform: translateY(0);
     opacity: 1;
+
+    background: linear-gradient(
+        to top, rgba(0,0,0,0.9),
+        transparent
+    );
+    /*Começa deslocando para baixo e invisivel*/
+    transform: translateY(60%);
+    opacity: 0;
+    transition:transform 0.4s ease,;opacity: 0.4s ease;
+    
+}
+/* ao passar o mouse no card, o conteudo sobe e aparece*/
+.card:hover .card-conteudo{
+    transform: translateY(0);
+    opacity: 1;
+
+ 
 }
 
 .card-conteudo h3{
     font-size: 1.3rem;
     margin-bottom: 8px;
+
 }
 .card-conteudo p{
     font-size: 0.9rem;
     margin-bottom: 14px;
     opacity: 0,9;
+
+
+}
+.card-conteudo p {
+    font-size: 0.9rem;
+    margin-bottom: 14px;
+    opacity: 0.9;
+ 
 }
 .btn{
     display: inline-block;
     padding: 8px 19px;
+ 
     background-color: rgb(221, 204, 128);
     color: white;
+
+    background: #d22c2c;
+    color: #fff;
+ 
     text-decoration: none;
     border-radius: 30px;
     font-size: 0.85rem;
     font-weight: bold;
+
     transition: background 0.3 ease;
 }
 
@@ -130,17 +236,5 @@ transition: transform 0.5s ease;
     height: 320px;
 }
 
-}
-.btn:hover{
-    background: #ff2e2e;
-}
-
-/*===RESPONSIVO===*/
-@media(max-widht:600px){
-    
-.card{
-    width: 90%;
-    height: 320px;
-}
 }
 
