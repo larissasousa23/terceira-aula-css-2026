@@ -5,7 +5,7 @@
 }
 body{
     min-height: 100vh;
-    font-family: 'Times New Roman', Times, serif;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     position: relative;
     overflow-x: hidden;
     display: flex;
@@ -111,11 +111,23 @@ transition: transform 0.5s ease;
 .btn{
     display: inline-block;
     padding: 8px 19px;
-    background-color: red;
+    background-color: rgb(221, 204, 128);
     color: white;
     text-decoration: none;
     border-radius: 30px;
     font-size: 0.85rem;
     font-weight: bold;
     transition: background 0.3 ease;
+}
+.btn:hover{
+    background: #fff;
+}
+/*===Responsivo===*/
+@media(max-width:600px){
+    .card{
+    width: ;
+    height: 320px;
+}
+
+
 }
